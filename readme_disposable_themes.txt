@@ -77,17 +77,20 @@ If you want to have a larger footer (like 2-3 lines or images/links etc), then y
 
 To do this, head to the css file and go to end directly, you will find the definitions and simple explanations for footer there. 
 
-** Diffences Between Templates **
+** Differences Between Templates **
 
 Except the sidebar on the left there are no differences between them.
 
-** Diffences From Previous Versions **
+** Differences From Previous Versions **
 
 The folder used for Widgets was corrected
-Widget controllers and blades got a slight update
+Widget controllers and blades got a some updates
 PersonalStats Widget now able to show stats for current last and previous month and current and last year (like the TopPilotsByPeriod)
+User Table fixed
+SimBrief Form Route Error fixed
+SimBrief Briefing VATSIM Prefile fixed
 
-Please check the forum post for the usage and options of my widgets, you do not need to download the widget pack 'cause this pack contains all of them.
+Please check the PhpVms Forum post for the usage and options of my widgets, you do not need to download the widgets pack 'cause this pack contains all of them.
 
 ** Special Thanks **
 
