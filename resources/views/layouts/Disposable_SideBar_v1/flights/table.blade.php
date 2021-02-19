@@ -90,7 +90,7 @@
                 <th style="width: 15%;">SubFleets</th>
                 <td>
                   @foreach($flight->subfleets as $subfleet)
-                    &bull; {{ $subfleet->name }}
+                    @if(!$loop->first) &bull; @endif {{ $subfleet->name }}
                   @endforeach
                 </td>
               </tr>
@@ -106,7 +106,7 @@
         <h5 class="mb-0 mt-0"><span class="badge badge-warning text-black float-left mr-2 ml-2">Code: {{ $flight->route_code }}</span></h5>
       @endif
       @if($flight->route_leg)
-        <h5 class="mb-0 mt-0"><span class="badge badge-warning text-black float-left mr-2 ml-2">Leg No: {{ $flight->route_leg }}</span></h5>
+        <h5 class="mb-0 mt-0"><span class="badge badge-warning text-black float-left mr-2 ml-2">Leg #{{ $flight->route_leg }}</span></h5>
       @endif
       <div class="col text-right">
         @if ($simbrief !== false)

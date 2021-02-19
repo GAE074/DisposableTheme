@@ -8,7 +8,7 @@
 </div>
 
 {{-- Second Row To Show Our Latest Pilots --}}
-<h3 class="card-title">@lang('common.newestpilots')</h3>
+<h4 class="card-title">@lang('common.newestpilots')</h4>
 <div class="row row-cols-5 mb-2">
   @foreach($users as $user)
     <div class="col">

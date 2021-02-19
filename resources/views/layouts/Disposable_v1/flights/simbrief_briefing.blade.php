@@ -68,7 +68,7 @@
               $rbf = 100 - $rbf;
               $minblock = $bfuel + $rbf;
             @endphp
-            <p class="border border-dark rounded p-1 small text-monospace">{{-- $simbrief->xml->fuel->plan_ramp --}} {{ $minblock }} {{ $simbrief->xml->params->units }}</p>
+            <p class="border border-dark rounded p-1 small text-monospace">{{ $minblock }} {{ $simbrief->xml->params->units }}</p>
           </div>
 
           <div class="col text-center">
@@ -79,7 +79,7 @@
               $rtf = 10 - $rtf;
               $tripf = $tfuel + $rtf;
             @endphp
-            <p class="border border-dark rounded p-1 small text-monospace">{{-- $simbrief->xml->fuel->enroute_burn --}} {{ $tripf }} {{ $simbrief->xml->params->units }}</p>
+            <p class="border border-dark rounded p-1 small text-monospace">{{ $tripf }} {{ $simbrief->xml->params->units }}</p>
           </div>
 
           <div class="col text-center">
@@ -90,7 +90,7 @@
               $rlf = 10 - $rlf;
               $remf = $rfuel + $rlf;
             @endphp
-            <p class="border border-dark rounded p-1 small text-monospace">{{-- $simbrief->xml->fuel->plan_landing --}} {{ $remf }} {{ $simbrief->xml->params->units }}</p>
+            <p class="border border-dark rounded p-1 small text-monospace">{{ $remf }} {{ $simbrief->xml->params->units }}</p>
           </div>
         </div>
 
@@ -134,8 +134,8 @@
           <form action="https://my.vatsim.net/pilots/flightplan" method="GET" target="_blank">
             <input type="hidden" name="raw" value="{{ $simbrief->xml->atc->flightplan_text }}">
             <input type="hidden" name="fuel_time" value="@secstohhmm($simbrief->xml->times->endurance)">
-            <input type="hidden" name="speed" value="{{ substr($simbrief->xml->atc->initial_spd,1) }}">
-            <input type="hidden" name="altitude" value="{{ $simbrief->xml->atc->initial_alt }}">
+            <input type="hidden" name="speed" value="@if(substr($simbrief->xml->atc->initial_spd,0,1) === '0'){{ substr($simbrief->xml->atc->initial_spd,1) }}@else{{ $simbrief->xml->atc->initial_spd }}@endif">
+            <input type="hidden" name="altitude" value="{{ $simbrief->xml->general->initial_altitude }}">
             <input id="vatsim_prefile" type="submit" class="btn btn-sm btn-primary ml-1" value="File ATC for VATSIM"/>
           </form>
         </div>

@@ -1,18 +1,16 @@
-PHPVMS v7 Themes : Disposable & Disposable SideBar v1.01
+PHPVMS v7 Themes : Disposable & Disposable SideBar v1.02
 
 Both themes use Bootstrap v4.6, Fontawesome v5+ solid icons and my personal widgets to enhance the look of your phpvms installation.
-Templates are compatible with latest dev build as of date 13.FEB.21 and i will try to keep it updated as the development continues.
+Templates are compatible with latest dev build as of date 19.FEB.21 and i will try to keep it updated as the development continues.
 
 ** Installation **
 
 Same folder structure is used with phpvms v7, so if you have a default installation for it, then installing the themes will take only seconds.
-
 Just extract the zip file at the root folder of your phpvms v7 installation, and select one of the templates from admin section.
 
 If you want to manually upload the files or have a modified installtion of phpvms please follow the instructions below;
 
-* Contents of app\widgets should be placed in your phpvms app\Widgets folder
-
+* Contents of app\Widgets should be placed in your phpvms app\Widgets folder
 * Contents of public\image should be placed in your phpvms public folder. 
 
 If you do not have an image folder directly under your public folder then you may need to create it.
@@ -29,7 +27,6 @@ This is where the default stylesheet files are already placed, so you should be 
 But if you miss or skip this step, templates will really look terrible and you would spot the problem in seconds.
 
 * Contents of public\assets\frontend\js should be placed in your phpvms public\assets\frontend\js folder.
-
 * Contents of resources\views\layouts folder should be placed under your phpvms resources\views\layouts folder.
 
 ** Re-Styling the Theme **
@@ -77,20 +74,24 @@ If you want to have a larger footer (like 2-3 lines or images/links etc), then y
 
 To do this, head to the css file and go to end directly, you will find the definitions and simple explanations for footer there. 
 
-** Differences Between Templates **
+** Diffences Between Templates **
 
 Except the sidebar on the left there are no differences between them.
 
-** Differences From Previous Versions **
+** Diffences Compared to v1.00 **
 
 The folder used for Widgets was corrected
-Widget controllers and blades got a some updates
+Widget controllers and blades got updates
 PersonalStats Widget now able to show stats for current last and previous month and current and last year (like the TopPilotsByPeriod)
-User Table fixed
-SimBrief Form Route Error fixed
-SimBrief Briefing VATSIM Prefile fixed
 
-Please check the PhpVms Forum post for the usage and options of my widgets, you do not need to download the widgets pack 'cause this pack contains all of them.
+Please check the forum post for the usage and options of my widgets, you do not need to download the widget pack 'cause this pack contains all of them.
+
+** V1.02 Changes **
+
+Correction for VATSIM Prefile (speed and initial altitude)
+Weather Widget is now compatible with latest dev (TAF display and raw_only option usage fixed)
+Removed my name from the footer (Just keep the theme name along with my GitHub link to meet minimum licence requirements)
+More code cleanup and some corrections/improvements not affecting display or functionality
 
 ** Special Thanks **
 
@@ -98,7 +99,7 @@ To Mr.Doug and Mr.Maco for their support and suggestions during the development 
 
 ** Tests **
 
-This theme is tested with Chrome,Firefox,Safari and Ms Edge on desktop computers. Also some tests done with mobile phones and tablets.
+This theme is tested with Chrome,Firefox,Safari,Opera and Ms Edge on desktop computers. Also some tests done with mobile phones and tablets.
 So far all was good thus I dediced to share it.
 
 If you encounter problems in a specific device just let me know, maybe i can fix it.
@@ -107,4 +108,4 @@ Safe flights and enjoy.
 B.Fatih KOZ
 'Disposable Hero'
 https://github.com/FatihKoz
-13.FEB.21
+19.FEB.21

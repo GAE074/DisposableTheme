@@ -8,17 +8,17 @@
   </div>
 </div>
 
-  @foreach($aircraft as $acdetails)
-    @php
-      $simbrieftype = $acdetails->icao ;
-      $subflid = $acdetails->subfleet_id ;
-      if($acdetails->icao === 'A20N') { $simbrieftype = 'A320'; }
-      if($acdetails->icao === 'A21N') { $simbrieftype = 'A321'; }
-      if($acdetails->icao === 'B77L') { $simbrieftype = 'B77F'; }
-      if($acdetails->icao === 'B773') { $simbrieftype = 'B77W'; }
-      if($acdetails->icao === 'E35L') { $simbrieftype = 'E135'; }
-    @endphp
-  @endforeach
+@foreach($aircraft as $acdetails)
+  @php
+    $simbrieftype = $acdetails->icao ;
+    $subflid = $acdetails->subfleet_id ;
+    if($acdetails->icao === 'A20N') { $simbrieftype = 'A320'; }
+    if($acdetails->icao === 'A21N') { $simbrieftype = 'A321'; }
+    if($acdetails->icao === 'B77L') { $simbrieftype = 'B77F'; }
+    if($acdetails->icao === 'B773') { $simbrieftype = 'B77W'; }
+    if($acdetails->icao === 'E35L') { $simbrieftype = 'E135'; }
+  @endphp
+@endforeach
 
 <form id="sbapiform">
   <div class="row">
@@ -37,7 +37,7 @@
               <input type="text" class="form-control" value="{{ $acdetails->registration }}" maxlength="6" disabled/>
               <input type="hidden" id="reg" name="reg" value="{{ $acdetails->registration }}"/>
             </div>
-            @if($acdetails->registration <> $acdetails->name)
+            @if($acdetails->registration != $acdetails->name)
               <div class="col">
                 <label for="acname">Name</label>
                 <input type="text" class="form-control" value="{{ $acdetails->name }}" disabled/>
@@ -414,21 +414,5 @@
   let rminutes = Math.round(minutes);
   document.getElementById("steh").setAttribute('value', rhours.toString()); // Sent to Simbrief
   document.getElementById("stem").setAttribute('value', rminutes.toString()); // Sent to Simbrief
-</script>
-<script type="text/javascript">
-  // *** Simple Aircraft Selection With Dropdown Change
-  // *** Also keep Generate button hidden until a valid AC selection
-  const $oldlink = document.getElementById("mylink").href;
-
-  function checkacselection() {
-    if (document.getElementById("aircraftselection").value === "ZZZZZ") {
-      document.getElementById('mylink').style.visibility = 'hidden';
-    } else {
-      document.getElementById('mylink').style.visibility = 'visible';
-    }
-    var $selectedac = document.getElementById("aircraftselection").value;
-    var $newlink = "&aircraft_id=".concat($selectedac);
-    document.getElementById("mylink").href = $oldlink.concat($newlink);
-  }
 </script>
 @endsection

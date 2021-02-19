@@ -64,7 +64,7 @@
             <div class="card mt-1 mb-1">
               <div class="card-body p-1 text-center">
                 <span class="float-left">&copy; @php echo date('Y'); @endphp {{ config('app.name') }}</span>
-                <span><b>Disposable v1.01</b> theme by <a href="https://github.com/FatihKoz" target="_blank">B.Fatih KOZ</a></span>
+                <span><a href="https://github.com/FatihKoz" target="_blank">Disposable Theme v1.02</a></span>
                 <span class="float-right">Powered by <a href="http://www.phpvms.net" target="_blank">PhpVMS v7</a></span>
               </div>
             </div>
