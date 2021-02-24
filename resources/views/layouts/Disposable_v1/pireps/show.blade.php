@@ -6,7 +6,7 @@
   <div class="col text-left">
     <h3 class="card-title m-0 p-0">{{ $pirep->airline->icao }}{{ $pirep->ident }} : {{ $pirep->dpt_airport_id }} > {{ $pirep->arr_airport_id }}</h3>
   </div>
-  
+
   <div class="col text-right">
     @if (!empty($pirep->simbrief))
       <a href="{{ url(route('frontend.simbrief.briefing', [$pirep->simbrief->id])) }}" class="btn btn-sm btn-info mr-1">SimBrief OFP</a>
@@ -139,7 +139,7 @@
     @if(count($pirep->fares) > 0)
       <div class="card mb-2">
         <div class="card-header p-1"><h5 class="m-1 p-0"><i class="fas fa-ellipsis-h float-right"></i>{{ trans_choice('pireps.fare', 2) }}</h5></div>
-        <div class="card-body p-0">          
+        <div class="card-body p-0">
           <table class="table table-sm table-borderless table-striped mb-0">
             <thead>
               <th>@lang('pireps.class')</th>
@@ -154,6 +154,47 @@
             @endforeach
             </tbody>
           </table>
+        </div>
+      </div>
+    @endif
+
+    @if(count($pirep->transactions) > 0)
+      <div class="card mb-2">
+        <div class="card-header p-1"><h5 class="m-1 p-0"><i class="fas fa-file-invoice float-right"></i>Transaction Details</h5></div>
+        <div class="card-body p-0">
+          <table class="table table-sm table-borderless table-striped mb-0 text-right">
+            <tr>
+              <th class="text-left"></th>
+              <th>Credit</th>
+              <th>Debit</th>
+            </tr>
+            @foreach($pirep->transactions->where('journal_id', $pirep->airline->journal->id) as $entry)
+              <tr>
+                <td class="text-left">{{ $entry->memo }}</td>
+                <td>
+                  @if($entry->credit)
+                    {{ money($entry->credit, setting('units.currency')) }}
+                  @endif
+                </td>
+                <td>
+                  @if($entry->debit)
+                    {{ money($entry->debit, setting('units.currency')) }}
+                  @endif
+                </td>
+              </tr>
+            @endforeach
+            <tr>
+              <th class="text-left"></th>
+              <th>{{ money($pirep->transactions->where('journal_id', $pirep->airline->journal->id)->sum('credit'), setting('units.currency')) }}</th>
+              <th>{{ money($pirep->transactions->where('journal_id', $pirep->airline->journal->id)->sum('debit'), setting('units.currency')) }}</th>
+            </tr>
+          </table>
+        </div>
+        <div class="card-footer p-1 text-left">
+          <span><b>Balance</b></span>
+          <span class="float-right"><b>
+          {{ money($pirep->transactions->where('journal_id', $pirep->airline->journal->id)->sum('credit') - $pirep->transactions->where('journal_id', $pirep->airline->journal->id)->sum('debit'), setting('units.currency')) }}
+          </b></span>
         </div>
       </div>
     @endif
