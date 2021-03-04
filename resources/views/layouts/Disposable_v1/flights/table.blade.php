@@ -4,7 +4,7 @@
       <h5 class="p-0 ml-2 mr-2 mt-0 mb-0 ">
         @if(optional($flight->airline)->logo)
           <img src="{{ $flight->airline->logo }}" alt="{{$flight->airline->name}}" class="p-0 mr-2 img-mh40"/>
-        @endif 
+        @endif
         <a href="{{ route('frontend.flights.show', [$flight->id]) }}">{{ $flight->airline->iata }} {{ $flight->flight_number }}</a>
         <span class="float-right">
           <button class="btn btn-round btn-icon" title="Show/Hide Details" type="button" data-toggle="collapse" data-target="#Details{{$flight->id}}" aria-expanded="false" aria-controls="Details{{$flight->id}}">
@@ -54,7 +54,7 @@
                   </a>
                 </td>
               </tr>
-            @endif         
+            @endif
             @if(filled($flight->route))
               <tr>
                 <th style="width: 15%;">@lang('flights.route')</th>
@@ -111,12 +111,14 @@
       <div class="col text-right">
         @if ($simbrief !== false)
           @if ($simbrief_bids === false || ($simbrief_bids === true && in_array($flight->id, $saved, true)))
-            <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-primary">Create SimBrief Flight Plan</a>
+            <a href="{{ route('frontend.simbrief.generate') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-primary">Create SimBrief OFP</a>
+          @endif
+          @if ($flight->simbrief)
+            <a href="{{ route('frontend.simbrief.briefing', $flight->simbrief->id) }}" class="btn btn-sm btn-secondary">View Simbrief OFP</a>
           @endif
         @endif
-        <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info">{{ __('pireps.newpirep') }}</a>
+        <a href="{{ route('frontend.pireps.create') }}?flight_id={{ $flight->id }}" class="btn btn-sm btn-info">New Manual Pirep</a>
       </div>
     </div>
   </div>
-
 @endforeach

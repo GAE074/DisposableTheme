@@ -2,6 +2,16 @@
 @section('title', 'Briefing')
 
 @section('content')
+{{-- Fuel Rounder Function --}}
+@php
+  function RoundFuel($fuel, $round) {
+    $myfuel = floatval($fuel);
+    $rmf = fmod($myfuel,$round);
+    $rmf = $round - $rmf;
+    $rounded = $myfuel + $rmf;
+    return $rounded;
+  }
+@endphp
 <div class="row">
   <div class="col text-left">
     <h3 class="card-title">
@@ -26,14 +36,12 @@
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Flight</p>
             <p class="border border-dark rounded p-1 small text-monospace">{{ $simbrief->xml->general->icao_airline }}{{ $simbrief->xml->general->flight_number }}</p>
           </div>
-
           <div class="col text-center">
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Departure</p>
             <p class="border border-dark rounded p-1 small text-monospace">
               {{ $simbrief->xml->origin->icao_code }}@if(!empty($simbrief->xml->origin->plan_rwy)) / Rwy.{{ $simbrief->xml->origin->plan_rwy }} @endif
             </p>
           </div>
-
           <div class="col text-center">
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Arrival</p>
             <p class="border border-dark rounded p-1 small text-monospace">
@@ -47,12 +55,10 @@
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Aircraft</p>
             <p class="border border-dark rounded p-1 small text-monospace">{{ $simbrief->xml->aircraft->name }} / {{ $simbrief->xml->aircraft->reg }}</p>
           </div>
-
           <div class="col text-center">
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Est. Enroute Time</p>
             <p class="border border-dark rounded p-1 small text-monospace">@minutestotime($simbrief->xml->times->est_time_enroute / 60)</p>
           </div>
-
           <div class="col text-center">
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Cruise Altitude</p>
             <p class="border border-dark rounded p-1 small text-monospace">{{ $simbrief->xml->general->initial_altitude }}</p>
@@ -62,35 +68,15 @@
         <div class="row row-cols-3 mb-1">
           <div class="col text-center">
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Min Block Fuel</p>
-            @php
-              $bfuel = floatval($simbrief->xml->fuel->plan_ramp);
-              $rbf = fmod($bfuel,100);
-              $rbf = 100 - $rbf;
-              $minblock = $bfuel + $rbf;
-            @endphp
-            <p class="border border-dark rounded p-1 small text-monospace">{{ $minblock }} {{ $simbrief->xml->params->units }}</p>
+            <p class="border border-dark rounded p-1 small text-monospace">{{ number_format(RoundFuel($simbrief->xml->fuel->plan_ramp, 100)) }} {{ $simbrief->xml->params->units }}</p>
           </div>
-
           <div class="col text-center">
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Trip Fuel</p>
-            @php
-              $tfuel = floatval($simbrief->xml->fuel->enroute_burn);
-              $rtf = fmod($tfuel,10);
-              $rtf = 10 - $rtf;
-              $tripf = $tfuel + $rtf;
-            @endphp
-            <p class="border border-dark rounded p-1 small text-monospace">{{ $tripf }} {{ $simbrief->xml->params->units }}</p>
+            <p class="border border-dark rounded p-1 small text-monospace">{{ number_format(RoundFuel($simbrief->xml->fuel->enroute_burn, 10)) }} {{ $simbrief->xml->params->units }}</p>
           </div>
-
           <div class="col text-center">
             <p class="small text-uppercase pb-sm-0 mb-sm-1">Remaining Fuel</p>
-            @php
-              $rfuel = floatval($simbrief->xml->fuel->plan_landing);
-              $rlf = fmod($rfuel,10);
-              $rlf = 10 - $rlf;
-              $remf = $rfuel + $rlf;
-            @endphp
-            <p class="border border-dark rounded p-1 small text-monospace">{{ $remf }} {{ $simbrief->xml->params->units }}</p>
+            <p class="border border-dark rounded p-1 small text-monospace">{{ number_format(RoundFuel($simbrief->xml->fuel->plan_landing, 10)) }} {{ $simbrief->xml->params->units }}</p>
           </div>
         </div>
 
@@ -122,14 +108,12 @@
         </p>
       </div>
       <div class="card-footer p-1">
-
         <div class="float-right">
           <a href="{{ $simbrief->xml->poscon_prefile }}" target="_blank" class="btn btn-sm btn-primary ml-1">File ATC for POSCON</a>
         </div>
         <div class="float-right">
           <a href="{{ $simbrief->xml->pilotedge_prefile }}" target="_blank" class="btn btn-sm btn-primary ml-1">File ATC for PilotEdge</a>
         </div>
-
         <div class="float-right">
           <form action="https://my.vatsim.net/pilots/flightplan" method="GET" target="_blank">
             <input type="hidden" name="raw" value="{{ $simbrief->xml->atc->flightplan_text }}">
@@ -139,7 +123,6 @@
             <input id="vatsim_prefile" type="submit" class="btn btn-sm btn-primary ml-1" value="File ATC for VATSIM"/>
           </form>
         </div>
-
         <div class="float-right">
           <form action="https://fpl.ivao.aero/api/fp/load" method="POST" target="_blank">
             <input type="hidden" name="CALLSIGN" value="{{ $simbrief->xml->atc->callsign }}"/>
@@ -167,7 +150,6 @@
             <input id="ivao_prefile" type="submit" class="btn btn-sm btn-primary" value="File ATC for IVAO"/>
           </form>
         </div>
-
         <div class="float-left">
           <a href="http://skyvector.com/?chart=304&fpl={{ $simbrief->xml->origin->icao_code }} {{ $simbrief->xml->general->route }} {{ $simbrief->xml->destination->icao_code }}"
              target="_blank" class="btn btn-sm btn-info">View Route At SkyVector</a>
