@@ -332,7 +332,7 @@
 
       <div class="card bg-transparent mb-2 p-0 text-right border-0">
         <input type="button" class="btn btn-primary" value="Generate"
-            onclick="simbriefsubmit('{{ $flight->id }}', '{{ url(route('frontend.simbrief.briefing', [''])) }}');">
+            onclick="simbriefsubmit('{{ $flight->id }}', '{{ $aircraft->id }}', '{{ url(route('frontend.simbrief.briefing', [''])) }}');">
       </div>
     </div>
   </div>
