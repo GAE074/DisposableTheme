@@ -21,6 +21,11 @@
         </div>
 
         <div class="form-group input-group-sm">
+          <label for="route_code">Code</label>
+          {{ Form::text('route_code', null, ['class' => 'form-control']) }}
+        </div>
+
+        <div class="form-group input-group-sm">
          <label for="dep_icao" class="control-label">@lang('airports.departure')</label>
          {{ Form::select('dep_icao', $airports, null , ['class' => 'form-control select2']) }}
         </div>

@@ -28,31 +28,18 @@
 
           A couple of places (like the distance) use both to output the correct bindings.
           --}}
-          <div id="map-info-box" class="map-info-box" rv-show="pirep" style="width: {{ $config['width'] }};">
-            <div style="float: left; width: 50%;">
-              <h3 style="margin: 0" id="map_flight_id">
-                <a rv-href="pirep.id | prepend '{{url('/pireps/')}}/'" target="_blank">{ pirep.airline.icao }{ pirep.flight_number }</a>
-              </h3>
-              <p id="map_flight_info">
-                { pirep.dpt_airport.name } ({ pirep.dpt_airport.icao }) @lang('common.to')
-                { pirep.arr_airport.name } ({ pirep.arr_airport.icao })
-              </p>
-            </div>
-            <div style="float: right; margin-left: 30px; margin-right: 30px;">
-              <p id="map_flight_stats_right">
-                @lang('widgets.livemap.groundspeed'): <span style="font-weight: bold">{ pirep.position.gs }</span><br/>
-                @lang('widgets.livemap.altitude'): <span style="font-weight: bold">{ pirep.position.altitude }</span><br/>
-                @lang('widgets.livemap.heading'): <span style="font-weight: bold">{ pirep.position.heading }</span><br/>
-              </p>
-            </div>
-            <div style="float: right; margin-left: 30px;">
-              <p id="map_flight_stats_middle">
-                @lang('common.status'): <span style="font-weight: bold">{ pirep.status_text }</span><br/>
-                @lang('flights.flighttime'): <span style="font-weight: bold">{ pirep.flight_time | time_hm }</span><br/>
-                @lang('common.distance'): <span style="font-weight: bold">{ pirep.position.distance.{{setting('units.distance')}} }</span>
-                / <span style="font-weight: bold">{ pirep.planned_distance.{{setting('units.distance')}} }</span>
-              </p>
-            </div>
+          <div id="map-info-box" class="map-info-box" rv-show="pirep.id" style="width: {{ $config['width'] }}; height: 50px; padding: 5px; background-color: rgba(118,147,171,0.8);">
+            <table class="table table-sm table-borderless mb-0 text-left">
+              <tr>
+                <td class="align-middle"><img rv-src="pirep.airline.logo" height="40px;"/></td>
+                <td class="align-middle"><b>{ pirep.airline.icao }{ pirep.flight_number }</b></td>
+                <td class="align-middle"><b>{ pirep.user.name_private }</b></td>
+                <td class="align-middle"><span rv-title="pirep.aircraft.icao">{ pirep.aircraft.registration }</span></td>
+                <td class="align-middle"><span rv-title="pirep.dpt_airport.location">{ pirep.dpt_airport.name } ({pirep.dpt_airport.iata})</span></td>
+                <td class="align-middle"><span rv-title="pirep.arr_airport.location">{ pirep.arr_airport.name } ({pirep.arr_airport.iata})</span></td>
+                <td class="align-middle text-right">{ pirep.status_text }</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
