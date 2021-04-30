@@ -64,12 +64,12 @@ But if you miss or skip this step, template will really look terrible and you wo
 
 ** Re-Styling the Theme **
 
-I tried to follow a standard on all blade files, for example all page headings use the same class (card-title) and they are all in <h3></h3> tags.\
-All card headers are in <h5></h5> tags, no manual style="..." codes used in the blades except when it is/was really necessary etc.
+I tried to follow a standard on all blade files, for example all page headings use the same class (card-title) and they are all in `<h3></h3>` tags.\
+All card headers are in `<h5></h5>` tags, no manual `style="..."` codes used in the blades except when it is/was really necessary etc.
 
 If you want to change all page title's color you can add below line to the css file instead of editing dozens of blade files one by one.
 
-.card-title { color: pink; } or .card-title { font-size: 150%; color: #FFFFFF; }
+`.card-title { color: pink; }` or `.card-title { font-size: 150%; color: #FFFFFF; }`
 
 Also i tried to make the css file simple for user to edit, just the top part of the css would be enough for basic style changes. Of course you can do whatever you want in the blade files or in the css but if you are not experienced in things I kindly suggest to always have backups ;)
 
@@ -115,5 +115,5 @@ If you encounter problems in a specific device just let me know, maybe we can fi
 Safe flights and enjoy.\
 B.Fatih KOZ\
 'Disposable Hero'\
-https://github.com/FatihKoz\
+https://github.com/FatihKoz \
 30.APR.21
