@@ -9,7 +9,7 @@
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.dashboard.index') }}">
-        <i class="fas fa-house-user mr-1"></i>
+        <i class="fas fa-house-user"></i>
         @lang('common.dashboard')
       </a>
     </li>
@@ -17,14 +17,14 @@
     @if(Dispo_Modules('DisposableAirlines'))
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.aindex') }}">
-          <i class="fas fa-calendar-alt mr-1"></i>
+          <i class="fas fa-calendar-alt"></i>
           @lang('DisposableAirlines::common.airlines')
         </a>
       </li>
 
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.dfleet') }}">
-          <i class="fas fa-plane mr-1"></i>
+          <i class="fas fa-plane"></i>
           @lang('DisposableAirlines::common.fleet')
         </a>
       </li>
@@ -33,7 +33,7 @@
     @if(Dispo_Modules('DisposableHubs'))
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableHubs.hindex') }}">
-          <i class="fas fa-calendar-day mr-1"></i>
+          <i class="fas fa-calendar-day"></i>
           {{ trans_choice('DisposableHubs::common.hub', 2) }}
         </a>
       </li>
@@ -41,14 +41,14 @@
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.pilots.index') }}">
-        <i class="fas fa-users mr-1"></i>
+        <i class="fas fa-users"></i>
         {{ trans_choice('common.pilot', 2) }}
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.flights.index') }}">
-        <i class="fas fa-paper-plane mr-1"></i>
+        <i class="fas fa-paper-plane"></i>
         {{ trans_choice('common.flight', 2) }}
       </a>
     </li>
@@ -56,7 +56,7 @@
     @if(Dispo_Modules('DisposableTours'))
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableTours.dtours') }}">
-          <i class="fas fa-map-signs mr-1"></i>
+          <i class="fas fa-map-signs"></i>
           @lang('DisposableTours::common.tours')
         </a>
       </li>
@@ -65,7 +65,7 @@
     @if(Dispo_Modules('DisposableAirlines'))
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.dpireps') }}">
-          <i class="fas fa-upload mr-1"></i>
+          <i class="fas fa-upload"></i>
           {{ trans_choice('common.pirep', 2) }}
         </a>
       </li>
@@ -73,14 +73,14 @@
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.livemap.index') }}">
-        <i class="fas fa-globe mr-1"></i>
+        <i class="fas fa-globe"></i>
         @lang('common.livemap')
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.downloads.index') }}">
-        <i class="fas fa-download mr-1"></i>
+        <i class="fas fa-download"></i>
         {{ trans_choice('common.download', 2) }}
       </a>
     </li>
@@ -88,14 +88,14 @@
     @if(Dispo_Modules('DisposableRanks'))
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableRanks.dranks') }}">
-          <i class="fas fa-tags mr-1"></i>
+          <i class="fas fa-tags"></i>
           @lang('DisposableRanks::common.ranks')
         </a>
       </li>
 
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableRanks.dawards') }}">
-          <i class="fas fa-trophy mr-1"></i>
+          <i class="fas fa-trophy"></i>
           @lang('DisposableRanks::common.awards')
         </a>
       </li>
@@ -104,7 +104,7 @@
     @if(Dispo_Modules('DisposableHubs'))
       <li>
         <a class="nav-link m-1 p-1" href="{{ route('DisposableHubs.dstats') }}">
-          <i class="fas fa-cog mr-1"></i>
+          <i class="fas fa-cog"></i>
           @lang('DisposableHubs::common.stats')
         </a>
       </li>
@@ -114,7 +114,7 @@
     @foreach($moduleSvc->getFrontendLinks($logged_in=true) as &$link)
       <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-          <i class="{{ $link['icon'] }} mr-1"></i>{{ ($link['title']) }}
+          <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
         </a>
       </li>
     @endforeach
@@ -124,7 +124,7 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }} mr-1"></i>{{ ($link['title']) }}
+        <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
       </a>
     </li>
   @endforeach
@@ -133,7 +133,7 @@
   @foreach($page_links as $page)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank':'_self' }}">
-        <i class="{{ $page['icon'] }} mr-1"></i>{{ $page['name'] }}
+        <i class="{{ $page['icon'] }}"></i>{{ $page['name'] }}
       </a>
     </li>
   @endforeach
@@ -142,27 +142,27 @@
   @if(!Auth::check())
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.livemap.index') }}">
-        <i class="fas fa-globe mr-1"></i>
+        <i class="fas fa-globe"></i>
         @lang('common.livemap')
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.pilots.index') }}">
-        <i class="fas fa-users mr-1"></i>{{ trans_choice('common.pilot', 2) }}
+        <i class="fas fa-users"></i>{{ trans_choice('common.pilot', 2) }}
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url('/register') }}">
-        <i class="far fa-id-card mr-1"></i>
+        <i class="far fa-id-card"></i>
         @lang('common.register')
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url('/login') }}">
-        <i class="fas fa-sign-in-alt mr-1"></i>
+        <i class="fas fa-sign-in-alt"></i>
         @lang('common.login')
       </a>
     </li>
@@ -172,7 +172,7 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }} mr-1"></i>{{ ($link['title']) }}
+        <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
       </a>
     </li>
   @endforeach
@@ -180,7 +180,7 @@
   @foreach($page_links as $page)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank':'_self' }}">
-        <i class="{{ $page['icon'] }} mr-1"></i>{{ $page['name'] }}
+        <i class="{{ $page['icon'] }}"></i>{{ $page['name'] }}
       </a>
     </li>
   @endforeach

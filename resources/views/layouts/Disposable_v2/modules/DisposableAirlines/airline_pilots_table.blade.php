@@ -33,7 +33,7 @@
     <tr>
       <td class="text-left align-middle">
         @if ($user->avatar == null)
-          <img class="rounded img-h50 border border-dark" src="{{ public_asset('/image/nophoto.jpg') }}"/>
+          <img class="rounded img-h50 border border-dark" src="{{ public_asset('/disposable/nophoto.jpg') }}"/>
         @else
           <img class="rounded img-h50 border border-dark" src="{{ $user->avatar->url }}">
         @endif

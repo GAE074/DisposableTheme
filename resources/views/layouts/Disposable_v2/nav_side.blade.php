@@ -18,7 +18,7 @@
         </a>
       @endability
       <a class="nav-link m-1 p-0 float-left" href="{{ route('frontend.profile.index') }}">
-        <i class="far fa-user" title="@lang('disposable.myprofile')"></i>
+        <i class="far fa-id-badge" title="@lang('disposable.myprofile')"></i>
       </a>
       @if(Dispo_Modules('DisposableAirlines'))
         <a class="nav-link m-1 p-0 float-left" href="{{ route('DisposableAirlines.ashow', [Auth::user()->airline->icao]) }}">
@@ -31,7 +31,7 @@
         </a>
       @endif
       <a class="nav-link m-1 p-0 float-left" href="{{ route('frontend.pireps.index') }}">
-        <i class="fas fa-cloud-upload-alt" title="@lang('disposable.mypireps')"></i>
+        <i class="fas fa-file-upload" title="@lang('disposable.mypireps')"></i>
       </a>
       <a class="nav-link m-1 ml-2 p-0 float-right" href="{{ url('/logout') }}">
         <i class="fas fa-sign-out-alt" title="@lang('common.logout')"></i>
@@ -42,7 +42,7 @@
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.dashboard.index') }}">
-        <i class="fas fa-house-user mr-1"></i>
+        <i class="fas fa-house-user"></i>
         @lang('common.dashboard')
       </a>
     </li>
@@ -74,14 +74,14 @@
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.pilots.index') }}">
-        <i class="fas fa-users mr-1"></i>
+        <i class="fas fa-users"></i>
         {{ trans_choice('common.pilot', 2) }}
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.flights.index') }}">
-        <i class="fas fa-paper-plane mr-1"></i>
+        <i class="fas fa-paper-plane"></i>
         {{ trans_choice('common.flight', 2) }}
       </a>
     </li>
@@ -106,14 +106,14 @@
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.livemap.index') }}">
-        <i class="fas fa-globe mr-1"></i>
+        <i class="fas fa-globe"></i>
         @lang('common.livemap')
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.downloads.index') }}">
-        <i class="fas fa-download mr-1"></i>
+        <i class="fas fa-download"></i>
         {{ trans_choice('common.download', 2) }}
       </a>
     </li>
@@ -147,7 +147,7 @@
     @foreach($moduleSvc->getFrontendLinks($logged_in=true) as &$link)
       <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-          <i class="{{ $link['icon'] }} mr-1"></i>{{ ($link['title']) }}
+          <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
         </a>
       </li>
     @endforeach
@@ -157,7 +157,7 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }} mr-1"></i>{{ ($link['title']) }}
+        <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
       </a>
     </li>
   @endforeach
@@ -166,7 +166,7 @@
   @foreach($page_links as $page)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank':'_self' }}">
-        <i class="{{ $page['icon'] }} mr-1"></i>{{ $page['name'] }}
+        <i class="{{ $page['icon'] }}"></i>{{ $page['name'] }}
       </a>
     </li>
   @endforeach
@@ -175,21 +175,21 @@
   @if(!Auth::check())
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.livemap.index') }}">
-        <i class="fas fa-globe mr-1"></i>
+        <i class="fas fa-globe"></i>
         @lang('common.livemap')
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url('/register') }}">
-        <i class="far fa-id-card mr-1"></i>
+        <i class="far fa-id-card"></i>
         @lang('common.register')
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url('/login') }}">
-        <i class="fas fa-sign-in-alt mr-1"></i>
+        <i class="fas fa-sign-in-alt"></i>
         @lang('common.login')
       </a>
     </li>
