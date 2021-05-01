@@ -124,7 +124,8 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
+        <i class="{{ $link['icon'] }}"></i>
+        {{ ($link['title']) }}
       </a>
     </li>
   @endforeach
@@ -133,7 +134,8 @@
   @foreach($page_links as $page)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank':'_self' }}">
-        <i class="{{ $page['icon'] }}"></i>{{ $page['name'] }}
+        <i class="{{ $page['icon'] }}"></i>
+        {{ $page['name'] }}
       </a>
     </li>
   @endforeach
@@ -141,15 +143,16 @@
   {{-- Show public links for visitors --}}
   @if(!Auth::check())
     <li class="nav-item">
-      <a class="nav-link m-1 p-1" href="{{ route('frontend.livemap.index') }}">
-        <i class="fas fa-globe"></i>
-        @lang('common.livemap')
+      <a class="nav-link m-1 p-1" href="{{ route('frontend.pilots.index') }}">
+        <i class="fas fa-users"></i>
+        {{ trans_choice('common.pilot', 2) }}
       </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link m-1 p-1" href="{{ route('frontend.pilots.index') }}">
-        <i class="fas fa-users"></i>{{ trans_choice('common.pilot', 2) }}
+      <a class="nav-link m-1 p-1" href="{{ route('frontend.livemap.index') }}">
+        <i class="fas fa-globe"></i>
+        @lang('common.livemap')
       </a>
     </li>
 
@@ -167,23 +170,6 @@
       </a>
     </li>
   @endif
-
-  {{-- Show the module links that don't require being logged in --}}
-  @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
-    <li class="nav-item">
-      <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
-      </a>
-    </li>
-  @endforeach
-
-  @foreach($page_links as $page)
-    <li class="nav-item">
-      <a class="nav-link m-1 p-1" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank':'_self' }}">
-        <i class="{{ $page['icon'] }}"></i>{{ $page['name'] }}
-      </a>
-    </li>
-  @endforeach
 
   @if(Auth::check())
     <li class="nav-item dropdown">

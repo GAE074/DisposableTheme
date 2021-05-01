@@ -38,8 +38,8 @@
       </a>
     </span>
     <div class="clearfix" style="height: 10px;"></div>
-    {{-- Menu Items --}}
 
+    {{-- Menu Items --}}
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ route('frontend.dashboard.index') }}">
         <i class="fas fa-house-user"></i>
@@ -48,14 +48,14 @@
     </li>
 
     @if(Dispo_Modules('DisposableAirlines'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.aindex') }}">
           <i class="fas fa-calendar-alt"></i>
           @lang('DisposableAirlines::common.airlines')
         </a>
       </li>
 
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.dfleet') }}">
           <i class="fas fa-plane"></i>
           @lang('DisposableAirlines::common.fleet')
@@ -64,7 +64,7 @@
     @endif
 
     @if(Dispo_Modules('DisposableHubs'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableHubs.hindex') }}">
           <i class="fas fa-calendar-day"></i>
           {{ trans_choice('DisposableHubs::common.hub', 2) }}
@@ -87,7 +87,7 @@
     </li>
 
     @if(Dispo_Modules('DisposableTours'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableTours.dtours') }}">
           <i class="fas fa-map-signs"></i>
           @lang('DisposableTours::common.tours')
@@ -96,7 +96,7 @@
     @endif
 
     @if(Dispo_Modules('DisposableAirlines'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.dpireps') }}">
           <i class="fas fa-upload"></i>
           {{ trans_choice('common.pirep', 2) }}
@@ -119,14 +119,14 @@
     </li>
 
     @if(Dispo_Modules('DisposableRanks'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableRanks.dranks') }}">
           <i class="fas fa-tags"></i>
           @lang('DisposableRanks::common.ranks')
         </a>
       </li>
 
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableRanks.dawards') }}">
           <i class="fas fa-trophy"></i>
           @lang('DisposableRanks::common.awards')
@@ -135,7 +135,7 @@
     @endif
 
     @if(Dispo_Modules('DisposableHubs'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableHubs.dstats') }}">
           <i class="fas fa-cog"></i>
           @lang('DisposableHubs::common.stats')
@@ -147,7 +147,8 @@
     @foreach($moduleSvc->getFrontendLinks($logged_in=true) as &$link)
       <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-          <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
+          <i class="{{ $link['icon'] }}"></i>
+          {{ ($link['title']) }}
         </a>
       </li>
     @endforeach
@@ -157,7 +158,8 @@
   @foreach($moduleSvc->getFrontendLinks($logged_in=false) as &$link)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ url($link['url']) }}">
-        <i class="{{ $link['icon'] }}"></i>{{ ($link['title']) }}
+        <i class="{{ $link['icon'] }}"></i>
+        {{ ($link['title']) }}
       </a>
     </li>
   @endforeach
@@ -166,7 +168,8 @@
   @foreach($page_links as $page)
     <li class="nav-item">
       <a class="nav-link m-1 p-1" href="{{ $page->url }}" target="{{ $page->new_window ? '_blank':'_self' }}">
-        <i class="{{ $page['icon'] }}"></i>{{ $page['name'] }}
+        <i class="{{ $page['icon'] }}"></i>
+        {{ $page['name'] }}
       </a>
     </li>
   @endforeach
