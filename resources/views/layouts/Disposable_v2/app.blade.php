@@ -30,6 +30,7 @@
       <script> @yield('scripts_head') </script>
     {{-- End of the required stuff in the head block --}}
   </head>
+  @include('disposable_functions')
   <body>
     @if(Theme::getSetting('sidebar'))
       <div class="d-flex" id="wrapper">

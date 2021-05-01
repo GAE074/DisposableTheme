@@ -29,7 +29,6 @@
               <th scope="row">@lang('common.country')</th>
               <td>
                 {{ $airport->country }}
-                {{-- <img class="img-h20 ml-2 mr-2" src="{{ public_asset('/image/flags_new/'.strtolower($airport->country).'.png') }}"> --}}
               </td>
             </tr>
             @if(filled($airport->timezone))
