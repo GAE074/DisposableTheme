@@ -91,7 +91,12 @@
                   @foreach($pirep->fields as $field)
                     <tr>
                       <th width="20%" nowrap="true">{{ $field->name }}</th>
-                      <td>{!! Dispo_PirepFields($field->slug,$field->value) !!}</td>
+                      <td>
+                        {!! Dispo_PirepFields($field->slug,$field->value) !!}
+                        @if(Dispo_Modules('DisposableTech'))
+                          {!! Dispo_CheckWeights($pirep->id,$field->slug) !!}
+                        @endif
+                      </td>
                     </tr>
                   @endforeach
                 </table>
