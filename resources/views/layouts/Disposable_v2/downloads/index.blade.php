@@ -43,7 +43,7 @@
       <div class="tab-pane fade" id="pills-subfleet" role="tabpanel" aria-labelledby="pills-subfleet-tab">
         <div id="DownloadsSubfleet" class="row row-cols-3">
           @foreach($grouped_files as $groupsf => $filessf)
-            @if(strpos($group, 'Subfleet >') !== false)
+            @if(strpos($groupsf, 'Subfleet >') !== false)
               <div class="col">
                 <div class="card mb-2">
                   <div class="card-header p-1"><h5 class="m-1 p-0">{{ substr($groupsf, 11) }}</h5></div>
