@@ -306,7 +306,7 @@
                 </table>
                 <div class="card-footer p-1 text-right">
                   <span class="float-left"><b>@lang('disposable.balance')</b></span>
-                  <span style="color: @if($p_balance > 0) darkgreen @else darkred @endif;"><b>{{ money($p_balance), setting('units.currency') }}</b></span>
+                  <span style="color: @if($p_balance > 0) darkgreen @else darkred @endif;"><b>{{ money($p_balance, setting('units.currency')) }}</b></span>
                 </div>
               </div>
             </div>
