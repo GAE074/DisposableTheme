@@ -234,12 +234,12 @@ use \Nwidart\Modules\Facades\Module;
         }
 
         if($fueltype === 1) {
-          if($flight->dpt_airport->fuel_jeta_cost) {
+          if($flight->dpt_airport && $flight->dpt_airport->fuel_jeta_cost) {
             $depcost = $flight->dpt_airport->fuel_jeta_cost;
           } else {
             $depcost = setting('airports.default_jet_a_fuel_cost');
           }
-          if($flight->arr_airport->fuel_jeta_cost) {
+          if($flight->arr_airport && $flight->arr_airport->fuel_jeta_cost) {
             $arrcost = $flight->arr_airport->fuel_jeta_cost;
           } else {
             $arrcost = setting('airports.default_jet_a_fuel_cost');
