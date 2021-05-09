@@ -39,6 +39,7 @@ return [
   'etd'            => 'ETD',
   'eta'            => 'ETA',
   'dof'            => 'DOF',
+  'schedule'       => 'Schedule',
   'stdfull'        => 'Sch.Departure Time (UTC)',
   'stafull'        => 'Sch.Arrival Time (UTC)',
   'etdfull'        => 'Est.Departure Time (UTC)',

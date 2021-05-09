@@ -20,6 +20,22 @@ use \Nwidart\Modules\Facades\Module;
     }
   }
 
+  // Decode Dates Of Flights
+  // Return string
+  if (!function_exists('Dispo_FlightDays')) {
+    function Dispo_FlightDays($flight_days)
+    {
+      $days = array();
+      for($i=0;$i<7;$i++) {
+        if($flight_days & pow(2,$i)) {
+          $days[]=jddayofweek($i,1);
+        }
+      }
+      $result = implode(",",$days);
+      return $result;
+    }
+  }
+
   // Below Functions Will Be Used If DisposableTools Module Is Not Installed or Disabled
   // Same functions are defined as Module Helpers, this is just a safety backup
   // If you need to edit any of these functions, please use the module helper file instead of this

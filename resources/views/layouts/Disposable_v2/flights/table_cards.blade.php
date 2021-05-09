@@ -98,6 +98,17 @@
                 <td>{{ Dispo_Distance($flight->distance) }}</td>
               </tr>
             @endif
+            @if($flight->days > 0 || filled($flight->start_date) && filled($flight->end_date))
+              <tr>
+                <th style="width: 15%;">@lang('disposable.schedule')</th>
+                <td>
+                  {{ Dispo_FlightDays($flight->days) }}
+                  @if(filled($flight->start_date) && filled($flight->end_date))
+                    &bull; {{ Carbon::parse($flight->start_date)->format('d.M.Y') }} - {{ Carbon::parse($flight->end_date)->format('d.M.Y') }}
+                  @endif
+                </td>
+              </tr>
+            @endif
             @if(filled($flight->notes))
               <tr>
                 <th style="width: 15%;">{{ trans_choice('common.note', 2) }}</th>
