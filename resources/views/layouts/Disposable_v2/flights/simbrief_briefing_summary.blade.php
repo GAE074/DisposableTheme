@@ -228,7 +228,13 @@
       </div>
     </div>
   </div>
-
+  @php
+    $crew_count = 0;
+    if($simbrief->xml->crew->cpt) { $crew_count++; }
+    if($simbrief->xml->crew->fo) { $crew_count++; }
+    if($simbrief->xml->crew->pu) { $crew_count++; }
+    $crew_count = $crew_count + count($simbrief->xml->crew->fa);
+  @endphp
   <div class="col col-5">
     <div class="card mb-2">
       <div class="card-header p-1">
@@ -281,7 +287,7 @@
               <input type="hidden" name="ALTICAO2" value="{{ $simbrief->xml->alternate2->icao_code}}"/>
               <input type="hidden" name="OTHER" value="{{ $simbrief->xml->atc->section18 }}"/>
               <input type="hidden" name="ENDURANCE" value="@secstohhmm($simbrief->xml->times->endurance)"/>
-              <input type="hidden" name="POB" value="{{ $simbrief->xml->weights->pax_count }}"/>
+              <input type="hidden" name="POB" value="{{ round($crew_count + $simbrief->xml->weights->pax_count) }}"/>
               <input id="ivao_prefile" type="submit" class="btn btn-sm btn-primary" value="@lang('disposable.atcivao')"/>
             </form>
           </div>
@@ -349,6 +355,7 @@
           </div>
         </div>
         <div class="card-footer p-1 text-right">
+          <span class="float-left"><b>Total Crew:</b> {{ $crew_count }}</span>
           <b>Flight Dispatcher:</b> {{ $simbrief->xml->crew->dx }} 
         </div>
       </div>
