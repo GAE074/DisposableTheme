@@ -55,13 +55,14 @@
             <a href="{{ route('frontend.airports.show', [$flight->arr_airport_id]) }}">{{ $flight->arr_airport_id }} {{ $flight->arr_airport->name ?? '' }}</a>
           </th>
         </tr>
-        @if($flight->dpt_time && $flight->arr_time)
-          <tr>
-            <td class="text-left" style="width: 50%;"><b>@lang('disposable.std')</b> {{ $flight->dpt_time }} UTC</td>
-            <td class="text-right" style="width: 50%;"><b>@lang('disposable.sta')</b> {{ $flight->arr_time }} UTC</td>
-          </tr>
-        @endif
       </table>
+      @if($flight->dpt_time && $flight->arr_time)
+        <div class="text-center">
+          <span class="float-left pl-1"><b>@lang('disposable.std')</b> {{ $flight->dpt_time }} UTC</span>
+          <b>{{ Dispo_FlightDays($flight->days) }}</b>
+          <span class="float-right pr-1"><b>@lang('disposable.sta')</b> {{ $flight->arr_time }} UTC</span>
+        </div>
+      @endif
       <div id="Details{{$flight->id}}" class="collapse">
         <table class="table table-sm table-striped table-borderless mb-0">
             @if($flight->alt_airport_id)
