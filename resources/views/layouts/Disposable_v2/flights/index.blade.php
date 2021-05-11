@@ -2,14 +2,6 @@
 @section('title', trans_choice('common.flight', 2))
 @include('disposable_functions')
 @section('content')
-  {{--
-    <div class="row">
-      <div class="col">
-        <h3 class="card-title">{{ trans_choice('common.flight', 2) }}</h3>
-      </div>
-    </div>
-  --}}
-
   <div class="row">
     <div class="col-9">
       @if(Theme::getSetting('flight_cards'))
@@ -21,6 +13,9 @@
     <div class="col-3">
       @include('flights.search')
       @include('flights.nav')
+      @if(Dispo_Modules('DisposableTools'))
+        @widget('Modules\DisposableTools\Widgets\FlightsMap')
+      @endif
     </div>
   </div>
 

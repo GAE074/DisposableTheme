@@ -1,4 +1,5 @@
 # Disposable Theme v2 (phpVms v7)
+***12.MAY.2021***
 
 This theme uses Bootstrap v4.6, Fontawesome v5+ icons to enhance the look of your phpvms installation.\
 It is multi-language ready and designed to be compatible with my current and possible future modules.\
@@ -117,3 +118,16 @@ B.Fatih KOZ\
 'Disposable Hero'\
 https://github.com/FatihKoz \
 30.APR.21
+
+***Update Notes***\
+12.APR.2021
+
+* Added FlightMaps to Flights page
+* Added a new helper for decoding days of scheduled flights (Thanks to GAE: German Air Express for their kind support)
+* Added decoded days to flight card (at Flight page) and Flight details page (along with start-end days if supplied)
+* Fixed some minor bugs reported by users
+
+Developer Note:\
+If you are getting "unable to locate mix file" errors in your Laravel Log,\
+please change all occurances of public_mix to public_asset in your app.blade.php.\
+Same solution may be applied to admin/app.blade.php file too.
