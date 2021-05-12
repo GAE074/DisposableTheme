@@ -6,8 +6,8 @@
 * Added decoded days to flight card (at Flight page) and Flight details page (along with start-end days if supplied)
 * Fixed some minor bugs reported by users
 
-Developer Note:  
-If you are getting "unable to locate mix file" errors in your Laravel Log, please change all occurances of public_mix to public_asset in your app.blade.php.  
+*Developer Note:*  
+If you are getting "unable to locate mix file" errors in your Laravel Log, please change all occurances of *public_mix* to *public_asset* in your app.blade.php  
 Same solution may be applied to admin/app.blade.php file too.
 
 ---
@@ -120,5 +120,5 @@ The main theme was tested with Chrome,Firefox,Safari,Opera and Ms Edge on deskto
 If you encounter problems in a specific device just let me know, maybe we can fix it.
 
 Safe flights and enjoy,  
-Disposable
-30.APR.21
+Disposable  
+30.APR.21  
