@@ -1,4 +1,4 @@
-This file is deprecated, please use README_DISPOSABLE_THEME.md for details.
+This file is deprecated, please use docs\README.md for details.
 
 Thanks,
 Disposable
