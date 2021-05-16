@@ -236,7 +236,7 @@
             @if(!empty($pirep->simbrief))
               <div class="tab-pane fade" id="nav-ofp" role="tabpanel" aria-labelledby="nav-ofp-tab">
                 <div class="overflow-auto pl-1 pt-1" style="min-height: 750px;">
-                  @if($pirep->simbrief->xml->params->units === 'lbs' && setting('units.weight') === 'kg' || $pirep->simbrief->xml->params->units === 'kgs' && setting('units.weight') === 'lbs' )
+                  @if($pirep->simbrief->xml->params->units == 'lbs' && setting('units.weight') === 'kg' || $pirep->simbrief->xml->params->units == 'kgs' && setting('units.weight') === 'lbs' )
                     <p class="small text-uppercase p-1 mb-1"><b>*** ALL WEIGHTS IN {{ $pirep->simbrief->xml->params->units }} ***</b></p>
                   @endif
                   {!! $pirep->simbrief->xml->text->plan_html !!}

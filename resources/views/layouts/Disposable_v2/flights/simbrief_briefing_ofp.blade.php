@@ -9,7 +9,7 @@
         </h5>
       </div>
       <div class="card-body p-1 overflow-auto" style="max-height: 850px;">
-        @if($simbrief->xml->params->units === 'lbs' && setting('units.weight') === 'kg' || $simbrief->xml->params->units === 'kgs' && setting('units.weight') === 'lbs' )
+        @if($simbrief->xml->params->units == 'lbs' && setting('units.weight') === 'kg' || $simbrief->xml->params->units == 'kgs' && setting('units.weight') === 'lbs' )
           <p class="small text-uppercase p-1 mb-1"><b>*** ALL WEIGHTS IN {{ $simbrief->xml->params->units }} ***</b></p>
         @endif
         {!! $simbrief->xml->text->plan_html !!}
