@@ -1,6 +1,10 @@
 ## Disposable Theme v2 (phpVms v7)
 **Update Notes**
-12.APR.2021
+22.MAY.2021
+* Added QR code to SimBrief Briefing Summary page
+* Fixed System Remarks only showing the first error/remark
+
+12.MAY.2021
 * Added FlightMaps to Flights page
 * Added a new helper for decoding days of scheduled flights (Thanks to GAE: German Air Express for their kind support)
 * Added decoded days to flight card (at Flight page) and Flight details page (along with start-end days if supplied)
