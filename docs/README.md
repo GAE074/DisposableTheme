@@ -110,7 +110,9 @@ If you encounter problems in a specific device just let me know, maybe we can fi
 Safe flights and enjoy,  
 Disposable  
 30.APR.21  
+
 ---
+
 ### Update Notes
 
 **22.MAY.2021**
@@ -122,7 +124,8 @@ Disposable
 * Added a new helper for decoding days of scheduled flights (Thanks to GAE: German Air Express for their kind support)
 * Added decoded days to flight card (at Flight page) and Flight details page (along with start-end days if supplied)
 * Fixed some minor bugs reported by users
+
 ---
+
 **Developer Note:**  
-If you are getting "unable to locate mix file" errors in your Laravel Log, please change all occurances of *public_mix* to *public_asset* in your app.blade.php  
-Same solution may be applied to admin/app.blade.php file too.
+If you are getting "unable to locate mix file" errors in your Laravel Log, please change all occurances of `public_mix` to `public_asset` in your `app.blade.php`. Same solution may be applied to admin/app.blade.php file too.
