@@ -208,7 +208,10 @@
           <div class="card-body p-1">
             <h6 class="m-1 p-0">
               @if(!empty($simbrief->xml->general->sys_rmk))
-                {{ $simbrief->xml->general->sys_rmk }}
+                @foreach($simbrief->xml->general->sys_rmk as $sys_rmk)
+                  @if(!$loop->first)<br>@endif
+                  {{ $sys_rmk }}
+                @endforeach
               @else
                 NIL
               @endif
@@ -360,6 +363,31 @@
         </div>
       </div>
     @endif
+    <div class="row row-cols-3">
+      <div class="col">{{-- Intentionally Left Blank --}}</div>
+      <div class="col">{{-- Intentionally Left Blank --}}</div>
+      <div class="col">
+        <div class="card mb-2">
+          <div class="card-body p-1 text-center">
+            <canvas id="qr-code"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+@section('scripts')
+  @parent
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script>
+    var qr;
+    (function() {
+      qr = new QRious({
+        element: document.getElementById('qr-code'),
+        size: 100,
+        value: "{{ url('/') }}/simbrief/{{$simbrief->id}}"
+      });
+    })();
+  </script>
+@endsection
  
