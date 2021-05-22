@@ -1,20 +1,4 @@
 ## Disposable Theme v2 (phpVms v7)
-**Update Notes**
-22.MAY.2021
-* Added QR code to SimBrief Briefing Summary page
-* Fixed System Remarks only showing the first error/remark
-
-12.MAY.2021
-* Added FlightMaps to Flights page
-* Added a new helper for decoding days of scheduled flights (Thanks to GAE: German Air Express for their kind support)
-* Added decoded days to flight card (at Flight page) and Flight details page (along with start-end days if supplied)
-* Fixed some minor bugs reported by users
-
-*Developer Note:*  
-If you are getting "unable to locate mix file" errors in your Laravel Log, please change all occurances of *public_mix* to *public_asset* in your app.blade.php  
-Same solution may be applied to admin/app.blade.php file too.
-
----
 
 This theme uses Bootstrap v4.6, Fontawesome v5+ icons to enhance the look of your phpvms installation. It is multi-language ready and designed to be compatible with my current and possible future modules.  
 Template is compatible with latest dev build as of date 30.APR.21 and i will try to keep it updated as the development continues.
@@ -126,3 +110,19 @@ If you encounter problems in a specific device just let me know, maybe we can fi
 Safe flights and enjoy,  
 Disposable  
 30.APR.21  
+---
+### Update Notes
+
+**22.MAY.2021**
+* Added QR code to SimBrief Briefing Summary page
+* Fixed System Remarks only showing the first error/remark
+
+**12.MAY.2021**
+* Added FlightMaps to Flights page
+* Added a new helper for decoding days of scheduled flights (Thanks to GAE: German Air Express for their kind support)
+* Added decoded days to flight card (at Flight page) and Flight details page (along with start-end days if supplied)
+* Fixed some minor bugs reported by users
+---
+**Developer Note:**  
+If you are getting "unable to locate mix file" errors in your Laravel Log, please change all occurances of *public_mix* to *public_asset* in your app.blade.php  
+Same solution may be applied to admin/app.blade.php file too.
