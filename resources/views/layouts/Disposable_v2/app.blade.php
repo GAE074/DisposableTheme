@@ -23,6 +23,7 @@
     <link href="{{ public_asset('/assets/frontend/css/styles.css') }}" rel="stylesheet"/>
     <!-- Custom Style for Disposable v1 Layout -->
     <link href="{{ public_asset('/assets/frontend/css/styles_disposable_v2.css') }}" rel="stylesheet"/>
+    <link href="{{ public_asset('/assets/frontend/css/styles_disposable_v2_darkmode.css') }}" rel="stylesheet"/>
 
     {{-- Start of the required files in the head block --}}
       <link href="{{ public_mix('/assets/global/css/vendor.css') }}" rel="stylesheet"/>
@@ -110,7 +111,7 @@
                 window.cookieconsent.initialise({palette: {popup: {background: "#edeff5",text: "#838391"},button: {"background": "#067ec1"}}, position: "top",})});
               </script>
           {{-- End the required tags block --}}
-
+          <script src="{{ public_asset('/disposable/dark-mode-switch.min.js') }}"></script>
           <script>$(document).ready(function () {$(".select2").select2({width: 'resolve'});});</script>
 
           {{--

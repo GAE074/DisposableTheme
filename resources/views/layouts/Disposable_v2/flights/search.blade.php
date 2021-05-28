@@ -12,16 +12,7 @@
 
         <div class="form-group input-group-sm">
           <label for="flight_type" class="control-label">@lang('flights.flighttype')</label>
-          @if(Theme::getSetting('flight_usedtypes'))
-            <select name="flight_type" class="form-control select2">
-              <option value=""></option>
-              @foreach(Dispo_FlightTypes() as $ftype)
-                <option value="{{ $ftype->flight_type }}">{{ \App\Models\Enums\FlightType::label($ftype->flight_type) }}</option>
-              @endforeach
-            </select>
-          @else
-            {{ Form::select('flight_type', $flight_types, null , ['class' => 'form-control select2']) }}
-          @endif
+          {{ Form::select('flight_type', $flight_types, null , ['class' => 'form-control select2']) }}
         </div>
 
         <div class="form-group input-group-sm">
@@ -52,8 +43,8 @@
       </div>
       <div class="card-footer p-1">
         <div class="row">
-          <div class="col text-center"><a href="{{ route('frontend.flights.index') }}" class="btn btn-info">@lang('common.reset')</a></div>
-          <div class="col text-center">{{ Form::submit(__('common.find'), ['class' => 'btn btn-primary']) }}</div>
+          <div class="col text-center"><a href="{{ route('frontend.flights.index') }}" class="btn btn-sm btn-info">@lang('common.reset')</a></div>
+          <div class="col text-center">{{ Form::submit(__('common.find'), ['class' => 'btn btn-sm btn-primary']) }}</div>
         </div>
       </div>
       {{ Form::close() }}

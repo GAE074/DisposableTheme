@@ -15,14 +15,14 @@
     </li>
 
     @if(Dispo_Modules('DisposableAirlines'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.aindex') }}">
           <i class="fas fa-calendar-alt"></i>
           @lang('DisposableAirlines::common.airlines')
         </a>
       </li>
 
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.dfleet') }}">
           <i class="fas fa-plane"></i>
           @lang('DisposableAirlines::common.fleet')
@@ -31,7 +31,7 @@
     @endif
 
     @if(Dispo_Modules('DisposableHubs'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableHubs.hindex') }}">
           <i class="fas fa-calendar-day"></i>
           {{ trans_choice('DisposableHubs::common.hub', 2) }}
@@ -54,7 +54,7 @@
     </li>
 
     @if(Dispo_Modules('DisposableTours'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableTours.dtours') }}">
           <i class="fas fa-map-signs"></i>
           @lang('DisposableTours::common.tours')
@@ -63,7 +63,7 @@
     @endif
 
     @if(Dispo_Modules('DisposableAirlines'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableAirlines.dpireps') }}">
           <i class="fas fa-upload"></i>
           {{ trans_choice('common.pirep', 2) }}
@@ -86,14 +86,14 @@
     </li>
 
     @if(Dispo_Modules('DisposableRanks'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableRanks.dranks') }}">
           <i class="fas fa-tags"></i>
           @lang('DisposableRanks::common.ranks')
         </a>
       </li>
 
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableRanks.dawards') }}">
           <i class="fas fa-trophy"></i>
           @lang('DisposableRanks::common.awards')
@@ -102,7 +102,7 @@
     @endif
 
     @if(Dispo_Modules('DisposableHubs'))
-      <li>
+      <li class="nav-item">
         <a class="nav-link m-1 p-1" href="{{ route('DisposableHubs.dstats') }}">
           <i class="fas fa-cog"></i>
           @lang('DisposableHubs::common.stats')
@@ -118,6 +118,13 @@
         </a>
       </li>
     @endforeach
+
+    <li class="nav-item" style="margin-left: 15px; padding-left: 5px;">
+      <div class="nav-link custom-control custom-switch m-1 p-1">
+        <input type="checkbox" class="ml-2 custom-control-input" id="darkSwitch" name="Dark Mode"/>
+        <label class="ml-2 custom-control-label" for="darkSwitch">Dark Mode</label>
+      </div>
+    </li>
   @endif
 
   {{-- Show the module links that don't require login / public --}}
