@@ -31,7 +31,7 @@ But if you miss or skip this step, template will really look terrible and you wo
 "sidebar" : 0,            // SideBar (left) and NavBar (top) switch
 "utc_clock" : 1,          // UTC Clock (javascript based)
 "flight_cards" : 0,       // Display flights as cards or in a classic table style 
-"flight_usedtypes" : 0,   // Display only used flight types at flight search
+"flight_usedtypes" : 0,   // THIS SETTING IS DEPRECATED ! Core PhpVms provides a better solution.
 "flight_bid" : 1,         // Enable Bid button at flight details page
 "flight_simbrief" : 1,    // Enable Generate SimBrief OFP button at flight details page
 "manual_pireps": 0,       // Hide Manual Pirep sending buttons
