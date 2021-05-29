@@ -1,5 +1,4 @@
 @php
-use \App\Models\Flight;
 use \App\Models\Enums\AircraftState;
 use \App\Models\Enums\AircraftStatus;
 use \App\Models\Enums\PirepState;
@@ -142,16 +141,6 @@ use \Nwidart\Modules\Facades\Module;
         }
 
         return $runway_data;
-      }
-    }
-
-    // Filter Flight Types
-    // return collection (of only used flight types at flights)
-    if (!function_exists('Dispo_FlightTypes')) {
-      function Dispo_FlightTypes()
-      {
-        $usedtypes = Flight::select('flight_type')->groupby('flight_type')->orderby('flight_type', 'asc')->get();
-        return $usedtypes;
       }
     }
 
