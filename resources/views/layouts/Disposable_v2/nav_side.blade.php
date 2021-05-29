@@ -200,7 +200,7 @@
     <li class="nav-item" style="margin-left: 25px;">
       <div class="nav-link custom-control custom-switch m-1 p-1">
         <input type="checkbox" class="ml-2 custom-control-input" id="darkSwitch" name="Dark Mode"/>
-        <label class="ml-2 custom-control-label" for="darkSwitch">Dark Mode</label>
+        <label class="ml-2 custom-control-label" for="darkSwitch">@lang('disposable.darkmode')</label>
       </div>
     </li>
   @endif

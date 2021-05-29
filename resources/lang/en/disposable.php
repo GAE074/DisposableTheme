@@ -1,5 +1,6 @@
 <?php
 return [
+  'darkmode'       => 'Dark Mode',
   'avg'            => 'Avg.',
   'average'        => 'Average',
   'score'          => 'Score',

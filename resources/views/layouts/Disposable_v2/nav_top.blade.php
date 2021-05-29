@@ -118,13 +118,6 @@
         </a>
       </li>
     @endforeach
-
-    <li class="nav-item" style="margin-left: 15px; padding-left: 5px;">
-      <div class="nav-link custom-control custom-switch m-1 p-1">
-        <input type="checkbox" class="ml-2 custom-control-input" id="darkSwitch" name="Dark Mode"/>
-        <label class="ml-2 custom-control-label" for="darkSwitch">Dark Mode</label>
-      </div>
-    </li>
   @endif
 
   {{-- Show the module links that don't require login / public --}}
@@ -179,6 +172,13 @@
   @endif
 
   @if(Auth::check())
+    <li class="nav-item" style="margin-left: 15px; padding-left: 5px;">
+      <div class="nav-link custom-control custom-switch m-1 p-1">
+        <input type="checkbox" class="ml-2 custom-control-input" id="darkSwitch" name="Dark Mode"/>
+        <label class="ml-2 custom-control-label" for="darkSwitch">@lang('disposable.darkmode')</label>
+      </div>
+    </li>
+
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
