@@ -115,6 +115,12 @@ Disposable
 
 ### Update Notes
 
+**29.MAY.2021**
+* Added necessary files for Dark Mode feature (darkmode.css , javascript files and some dark background images)
+* Updated `app.blade.php` for being ready for Dark Mode and placed DM switch to both nav blades.
+* Updated Flight Search / Flight Types dropdown. (it is now fully controlled by phpvms core)
+* Removed deprecated `Dispo_FlightTypes` function from `disposable_functions.blade.php`
+
 **22.MAY.2021**
 * Added QR code to SimBrief Briefing Summary page
 * Fixed System Remarks only showing the first error/remark
