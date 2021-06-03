@@ -115,6 +115,9 @@ Disposable
 
 ### Update Notes
 
+**03.JUN.2021**
+* German Translation (thanks @derrobin154)
+
 **29.MAY.2021**
 * Added necessary files for Dark Mode feature (darkmode.css , javascript files and some dark background images)
 * Updated `app.blade.php` for being ready for Dark Mode and placed DM switch to both nav blades.
