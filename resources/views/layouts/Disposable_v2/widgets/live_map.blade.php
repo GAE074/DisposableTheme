@@ -14,7 +14,7 @@
       <div class="card mb-2">
         <div class="card-header p-1">
           <h5 class="m-1 p-0">
-            @lang('common.livemap') <button class="btn btn-sm btn-primary" onclick="toggleLiveMap();">@lang('disposable.livemaphideshow')</button>
+            @lang('common.livemap') <button class="btn btn-sm btn-primary p-0 m-0 ml-2 pl-1 pr-1" onclick="toggleLiveMap();">@lang('disposable.livemaphideshow')</button>
             <i class="fas fa-globe float-right"></i>
           </h5>
         </div>
