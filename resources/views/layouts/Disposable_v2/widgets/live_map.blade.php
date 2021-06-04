@@ -124,9 +124,6 @@
 
     function toggleLiveMap(){
         var item = localStorage.getItem("liveMapToggled");
-        if(item === null){
-          localStorage.setItem("liveMapToggled", "true");
-        }
         if(item === "true"){
           $("#cardBodyMap").hide()
           localStorage.setItem("liveMapToggled", "false");
