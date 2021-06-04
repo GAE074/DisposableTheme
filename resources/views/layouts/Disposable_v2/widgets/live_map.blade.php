@@ -11,15 +11,15 @@
     Look in resources/js/maps/live_map.js to see where the actual binding
     and update() call is made
     --}}
-      <div class="card mb-2">
-        <div class="card-header p-1">
-          <h5 class="m-1 p-0">
-            @lang('common.livemap') <button class="btn btn-sm btn-primary p-0 m-0 ml-2 pl-1 pr-1" onclick="toggleLiveMap();">@lang('disposable.livemaphideshow')</button>
-            <i class="fas fa-globe float-right"></i>
-          </h5>
-        </div>
-        <div class="card-body p-0" id="cardBodyMap">
-          <div id="map" style="border-radius: 5px; width: {{ $config['width'] }}; height: {{ $config['height'] }}">
+    <div class="card mb-2">
+      <div class="card-header p-1">
+        <h5 class="m-1 p-0">
+          @lang('common.livemap') <button class="btn btn-sm btn-primary p-0 m-0 ml-2 pl-1 pr-1" onclick="toggleLiveMap();">@lang('disposable.livemaphideshow')</button>
+          <i class="fas fa-globe float-right"></i>
+        </h5>
+      </div>
+      <div class="card-body p-0" id="cardBodyMap">
+        <div id="map" style="border-radius: 5px; width: {{ $config['width'] }}; height: {{ $config['height'] }}">
           {{--
           This is the bottom bar that appears when you click on a flight in the map.
           You can show any data you want - use a JS debugger to see the value of "pirep",

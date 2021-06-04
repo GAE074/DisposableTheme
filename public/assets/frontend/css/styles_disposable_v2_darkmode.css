@@ -5,7 +5,7 @@
  *
  * To add a definition, you can just copy it from main stylesheet and add
  * [data-theme="dark"] before the first class or the id. Then edit the color/style etc.
- * 
+ *
  */
 
 [data-theme="dark"] {
@@ -55,6 +55,7 @@
 [data-theme="dark"] .card .card-footer { color: lightsalmon !important; }
 [data-theme="dark"] .card .overflow-auto { background-color: lightslategray !important; }
 [data-theme="dark"] #map { filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);}
+[data-theme="dark"] #live_flights_table { color: AntiqueWhite !important; }
 
 [data-theme="dark"] .btn { color: black; font-weight:500;}
 [data-theme="dark"] .select2-search input { color: black !important; }
