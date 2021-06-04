@@ -131,4 +131,5 @@ return [
   'fuel_rem'       => 'Remaining Fuel',
   'blocktime'      => 'Block Time',
   'pilotincommand' => 'Pilot In Command',
+  'livemaphideshow'=> 'Hide/Show Livemap',
 ];

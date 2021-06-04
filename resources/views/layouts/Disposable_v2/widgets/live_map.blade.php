@@ -14,11 +14,11 @@
       <div class="card mb-2">
         <div class="card-header p-1">
           <h5 class="m-1 p-0">
-            @lang('common.livemap')
+            @lang('common.livemap') <button class="btn btn-sm btn-primary" onclick="toggleLiveMap();">@lang('disposable.livemaphideshow')</button>
             <i class="fas fa-globe float-right"></i>
           </h5>
         </div>
-        <div class="card-body p-0">
+        <div class="card-body p-0" id="cardBodyMap">
           <div id="map" style="border-radius: 5px; width: {{ $config['width'] }}; height: {{ $config['height'] }}">
           {{--
           This is the bottom bar that appears when you click on a flight in the map.
@@ -109,5 +109,31 @@
         providers: {'OpenStreetMap.Mapnik': {},}
       }
     });
+
+    $(function() {
+          var item = localStorage.getItem("liveMapToggled");
+          if(item === null){
+          localStorage.setItem("liveMapToggled", "true");
+          }
+          if(item === "true"){
+            $("#cardBodyMap").show()
+          }else if(item === "false"){
+            $("#cardBodyMap").hide()
+          }
+    });
+
+    function toggleLiveMap(){
+        var item = localStorage.getItem("liveMapToggled");
+        if(item === null){
+          localStorage.setItem("liveMapToggled", "true");
+        }
+        if(item === "true"){
+          $("#cardBodyMap").hide()
+          localStorage.setItem("liveMapToggled", "false");
+        }else if(item === "false"){
+          $("#cardBodyMap").show()
+          localStorage.setItem("liveMapToggled", "true");
+        }
+    }
   </script>
 @endsection
