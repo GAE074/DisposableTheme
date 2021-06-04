@@ -131,4 +131,5 @@ return [
   'fuel_rem'       => 'Verbleibender Kraftstoff',
   'blocktime'      => 'Blockzeit',
   'pilotincommand' => 'Verantwortlicher Pilot',
+  'livemaphideshow'=> 'Livemap ein/ausblenden',
 ];
