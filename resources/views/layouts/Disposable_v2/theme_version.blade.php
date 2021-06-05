@@ -1,1 +1,1 @@
-<span><a href="https://github.com/FatihKoz/disposable-themes" target="_blank" title="Version: v2.0.3 (29MAY21)">Disposable Theme</a></span>
+<span><a href="https://github.com/FatihKoz/disposable-themes" target="_blank" title="Version: v2.0.5 (05JUN21)">Disposable Theme</a></span>
