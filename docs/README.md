@@ -115,6 +115,12 @@ Disposable
 
 ### Update Notes
 
+**05.JUN.2021**
+* Added Discord ID field to profile edit form
+* Updated LiveMap Widget blade (MapInfoBox will now show Altitude, Ground Speed and Heading of selected Aircraft)
+* Fixed DarkMode css/stylsheet (added missing livemap table definition)
+* Show/Hide Button in LiveMap Widget (thanks @derrobin154)
+
 **03.JUN.2021**
 * German Translation (thanks @derrobin154)
 
