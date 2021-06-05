@@ -17,6 +17,20 @@
       </div>
     </td>
   </tr>
+  <tr>
+    <td>
+      Discord ID 
+      <a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-" target="_blank">
+        <i class="fas fa-question-circle ml-2" title="How to find your ID"></i>
+      </a>
+    </td>
+    <td>
+      <div class="form-group input-group-sm mb-1 {{ $errors->has('discord_id') ? ' has-danger' : '' }}">
+        {{ Form::text('discord_id', null, ['class' => 'form-control']) }}
+        @if ($errors->has('discord_id')) <p class="form-text text-danger">{{ $errors->first('discord_id') }}</p>@endif
+      </div>
+    </td>
+  </tr>
   @if(Theme::getSetting('change_airline'))
     <tr>
       <td>@lang('common.airline')</td>
