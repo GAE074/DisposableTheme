@@ -38,11 +38,14 @@
               <tr>
                 <td class="align-middle"><img rv-src="pirep.airline.logo" height="40px;"/></td>
                 <td class="align-middle"><b>{ pirep.airline.icao }{ pirep.flight_number }</b></td>
-                <td class="align-middle"><b>{ pirep.user.name_private }</b></td>
-                <td class="align-middle"><span rv-title="pirep.aircraft.icao">{ pirep.aircraft.registration }</span></td>
                 <td class="align-middle"><span rv-title="pirep.dpt_airport.location">{ pirep.dpt_airport.name } ({pirep.dpt_airport.iata})</span></td>
                 <td class="align-middle"><span rv-title="pirep.arr_airport.location">{ pirep.arr_airport.name } ({pirep.arr_airport.iata})</span></td>
+                <td class="align-middle"><span rv-title="pirep.aircraft.icao">{ pirep.aircraft.registration }</span></td>
+                <td class="align-middle text-center"><span title="Ground Speed">{ pirep.position.gs } kt</span></td>
+                <td class="align-middle text-center"><span title="Altitude">{ pirep.position.altitude } ft</span></td>
+                <td class="align-middle text-center"><span title="Heading">{ pirep.position.heading } &deg;</span></td>
                 <td class="align-middle text-right">{ pirep.status_text }</td>
+                <td class="align-middle text-right"><b>{ pirep.user.name_private }</b></td>
               </tr>
             </table>
           </div>
