@@ -115,6 +115,9 @@ Disposable
 
 ### Update Notes
 
+**09.JUN.2021**
+* Added editing capability for generated SimBrief Flight Plans (phpvms dev build update IS mandatory)
+
 **05.JUN.2021**
 * Added Discord ID field to profile edit form
 * Updated LiveMap Widget blade (MapInfoBox will now show Altitude, Ground Speed and Heading of selected Aircraft)

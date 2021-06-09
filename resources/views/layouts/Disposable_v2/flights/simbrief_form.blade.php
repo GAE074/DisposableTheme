@@ -513,6 +513,7 @@
           <input type="hidden" id="omit_sids" name="omit_sids" value="0">
           <input type="hidden" id="omit_stars" name="omit_stars" value="0">
           <input type="hidden" id="find_sidstar" name="find_sidstar" value="R">
+          <input type="hidden" id="static_id" name="static_id" value="{{ $static_id }}">
         {{-- For more info about form fields and their details check SimBrief Forum / API Support --}}
 
         <div class="card bg-transparent mb-2 p-0 text-right border-0">
