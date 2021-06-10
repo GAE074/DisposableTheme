@@ -63,6 +63,9 @@
           </div>
         @endif
       </div>
+      @if($disptools)
+        @widget('Modules\DisposableTools\Widgets\FlightsMap', ['source' => $airline->id])
+      @endif
       @if($disptools && $pireps->count() > 0)
         @widget('Modules\DisposableTools\Widgets\AirlineStats', ['airline' => $airline->id])
       @endif
@@ -78,20 +81,20 @@
           <tr>
             <th>@lang('DisposableAirlines::common.aincome')</th>
             <td class="text-right">
-              {{ number_format($income) }} {{ setting('units.currency') }}
+              {{ money($income, setting('units.currency')) }}
             </td>
           </tr>
           <tr>
             <th>@lang('DisposableAirlines::common.aexpense')</th>
             <td class="text-right">
-              {{ number_format($expense) }} {{ setting('units.currency') }}
+              {{ money($expense, setting('units.currency')) }}
             </td>
           </tr>
           <tr>
             <th>@lang('DisposableAirlines::common.abalance')</th>
             <td class="text-right">
               <span style="color: @if($balance > 0) darkgreen @else darkred @endif;">
-                <b>{{ number_format($balance) }} {{ setting('units.currency') }}</b>
+                <b>{{ money($balance, setting('units.currency')) }}</b>
               </span>
             </td>
           </tr>
@@ -100,4 +103,8 @@
       </div>
     </div>
   </div>
+  {{-- Custom Style For Inactive Tabs --}}
+  <style>
+    .dispo-pills { color: black; background-color: lightslategray;}
+  </style>
 @endsection
