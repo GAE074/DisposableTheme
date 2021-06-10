@@ -115,6 +115,10 @@ Disposable
 
 ### Update Notes
 
+**10.JUN.2021**
+* Added a fix for duplicated DisposableAirlines module airline.blade.php to solve finance values being displayed without digits.
+  (Module was updated some time ago due to problems with php8 but I forgot to remove/update the duplicated file placed under DH2 folders)
+
 **09.JUN.2021**
 * Added editing capability for generated SimBrief Flight Plans (phpvms dev build update IS mandatory)
 
