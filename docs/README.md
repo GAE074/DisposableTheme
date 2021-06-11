@@ -115,6 +115,9 @@ Disposable
 
 ### Update Notes
 
+**11.JUN.2021**
+* Fixed SimBrief Briefing Summary tab, theme will now show all lines for Dispatch Remarks properly.
+
 **10.JUN.2021**
 * Added a fix for duplicated DisposableAirlines module airline.blade.php to solve finance values being displayed without digits.
   (Module was updated some time ago due to problems with php8 but I forgot to remove/update the duplicated file placed under DH2 folders)
