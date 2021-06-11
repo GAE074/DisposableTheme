@@ -194,7 +194,10 @@
           <div class="card-body p-1">
             <h6 class="m-1 p-0">
               @if(!empty($simbrief->xml->general->dx_rmk))
-                {{ $simbrief->xml->general->dx_rmk }}
+                @foreach($simbrief->xml->general->dx_rmk as $dx_rmk)
+                  @if(!$loop->first)<br>@endif
+                  {{ $dx_rmk }}
+                @endforeach
               @else
                 NIL
               @endif
@@ -359,7 +362,7 @@
         </div>
         <div class="card-footer p-1 text-right">
           <span class="float-left"><b>Total Crew:</b> {{ $crew_count }}</span>
-          <b>Flight Dispatcher:</b> {{ $simbrief->xml->crew->dx }} 
+          <b>Flight Dispatcher:</b> {{ $simbrief->xml->crew->dx }}
         </div>
       </div>
     @endif
@@ -390,4 +393,3 @@
     })();
   </script>
 @endsection
- 
