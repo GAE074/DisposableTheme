@@ -17,7 +17,7 @@
               <div class="col">
                 <label for="type">@lang('disposable.icaotype')</label>
                 <input type="text" class="form-control form-control-sm" value="{{ $aircraft->icao }}" maxlength="4" disabled/>
-                <input type="hidden" name="type" value="{{ $aircraft->subfleet->simbrief_type ?? $aircraft->icao }}">
+                <input type="hidden" id="type" name="type" value="{{ $aircraft->subfleet->simbrief_type ?? $aircraft->icao }}">
               </div>
               <div class="col">
                 <label for="reg">@lang('disposable.registration')</label>
@@ -481,10 +481,10 @@
           if(filled(Theme::getSetting('sb_rvr'))) { $sb_rvr = Theme::getSetting('sb_rvr');} else { $sb_rvr = '500';}
           if(filled(Theme::getSetting('sb_rmk'))) { $sb_rmk = Theme::getSetting('sb_rmk');} else { $sb_rmk = strtoupper(config('app.name'));}
         @endphp
-          {{-- If Disposable Module is installed and activated, Specs will overwrite below two form fields according to your defined AC Specifications and selections --}}
-          {{-- Below value fields are just defaults and remain in the form --}}
-          <input id="acdata" type="hidden" name="acdata" value="{'extrarmk':'RVR/{{ $sb_rvr }} RMK/TCAS {{ $sb_rmk }}','paxwgt':{{ round($pax_weight + $bag_weight) }}}" readonly>
-          <input id="fuelfactor" type="hidden" name="fuelfactor" value="P00" readonly>
+          {{-- If Disposable Tech Module is installed and activated, Specs will overwrite below two form fields according to your defined AC Specifications and selections --}}
+          {{-- Below value fields are just defaults and should remain in the form --}}
+          <input type="hidden" id="acdata" name="acdata" value="{'extrarmk':'RVR/{{ $sb_rvr }} RMK/TCAS {{ $sb_rmk }}','paxwgt':{{ round($pax_weight + $bag_weight) }}}" readonly>
+          <input type="hidden" id="fuelfactor" name="fuelfactor" value="" readonly>
           @if($tpaxfig)
             <input type="hidden" name="pax" value="{{ $tpaxfig }}">
           @elseif(!$tpaxfig && $tcargoload)

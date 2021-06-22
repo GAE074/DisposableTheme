@@ -115,6 +115,10 @@ Disposable
 
 ### Update Notes
 
+**22.JUN.2021**
+* Fixed Flight Details page, in some cases it was generating an error about userbids variable (thanks @tayrael for providing info and tests)
+* Updated SimBrief Form to match Disposable Tech module update requirements
+
 **11.JUN.2021**
 * Fixed SimBrief Briefing Summary tab, theme will now show all lines for Dispatch Remarks properly.
 

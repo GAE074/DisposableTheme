@@ -128,15 +128,16 @@
       @if($flight->alt_airport_id)
         {{ Widget::Weather(['icao' => $flight->alt_airport_id, 'raw_only' => true]) }}
       @endif
+      @php
+        if(Theme::getSetting('flight_bid') || Theme::getSetting('flight_simbrief') && filled(setting('simbrief.api_key'))) {
+          $userbids = \App\Models\Bid::where('user_id', Auth::id())->pluck('flight_id')->toArray();
+          if(in_array($flight->id, $userbids, true)) { $addremove = "remove"; } else { $addremove = "add"; }
+        }
+      @endphp
       @if(Theme::getSetting('flight_bid'))
         @if(!setting('pilots.only_flights_from_current') || $flight->dpt_airport_id === Auth::user()->current_airport->icao)
-          @php
-            $addremove = "add";
-            $userbids = \App\Models\Bid::where('user_id', Auth::id())->pluck('flight_id')->toArray();
-            if(in_array($flight->id, $userbids, true)) { $addremove = "remove"; }
-          @endphp
           {{-- !!! IMPORTANT NOTE !!! Don't remove the "save_flight" class, It will break the AJAX to save/delete --}}
-          <span class="btn btn-sm save_flight {{ in_array($flight->id, $userbids, true) ? 'btn-warning':'btn-primary' }} float-right mr-1 ml-1" onclick="AddRemoveBid('{{$addremove}}')">
+          <span class="btn btn-sm save_flight {{ in_array($flight->id, $userbids, true) ? 'btn-danger':'btn-success' }} float-right mr-1 ml-1" onclick="AddRemoveBid('{{$addremove}}')">
             @lang('flights.addremovebid')
           </span>
         @endif
@@ -164,7 +165,8 @@
           await phpvms.bids.addBid(flight_id);
           console.log('successfully saved flight');
           alert('@lang("flights.bidadded")');
-          window.location = "{{ route('frontend.flights.bids') }}";
+          // window.location = "{{ route('frontend.flights.bids') }}";
+          location.reload();
         } else {
           await phpvms.bids.removeBid(flight_id);
           console.log('successfully removed flight');
